@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card__images">
             <Gallery>
-                <img v-for="image in product.images" :key="image" :src="image">
+                <img v-for="image in product.images" :key="image" :src="image" @error="changeImage">
             </Gallery>
         </div>
         <div class="card__details">

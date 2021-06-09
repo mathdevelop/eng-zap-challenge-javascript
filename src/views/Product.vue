@@ -5,7 +5,7 @@
             <div class="product__information">
                 <div class="product__images">
                     <Gallery>
-                        <img v-for="image in product.images" :key="image" :src="image">
+                        <img v-for="image in product.images" :key="image" :src="image" @error="changeImage">
                     </Gallery>
                 </div>
                 <div class="product__details">

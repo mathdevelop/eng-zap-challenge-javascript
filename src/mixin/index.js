@@ -1,3 +1,5 @@
+import image from '@/assets/without-ssl.jpg';
+
 const mixin = {
     methods: {
         formatPrice: function(price) {
@@ -5,6 +7,9 @@ const mixin = {
                 style: 'currency',
                 currency: 'BRL'
             }).format(price);
+        },
+        changeImage: function(event) {
+            event.target.src = image;
         }
     }
 };
