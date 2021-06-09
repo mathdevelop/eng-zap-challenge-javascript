@@ -5,7 +5,7 @@
             <div class="product__information">
                 <div class="product__images">
                     <Gallery>
-                        <img v-for="image in product.images" :key="image" :src="env === 'production' ? '@/assets/without_ssl.jpg' : image" @error="changeImage">
+                        <img v-for="image in product.images" :key="image" :src="env !== 'production' ? withoutSSL : image" @error="changeImage">
                     </Gallery>
                 </div>
                 <div class="product__details">
@@ -53,6 +53,7 @@
 <script>
     import Loader from '@/components/Loader.vue';
     import Gallery from '@/components/Gallery.vue';
+    import withoutSSL from '@/assets/without-ssl.jpg';
 
     export default {
         name: 'Product',
@@ -63,7 +64,8 @@
         data() {
             return {
                 product: null,
-                env: process.env.NODE_ENV
+                env: process.env.NODE_ENV,
+                withoutSSL
             }
         },
         created() {

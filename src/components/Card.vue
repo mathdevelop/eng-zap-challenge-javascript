@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card__images">
             <Gallery>
-                <img v-for="image in product.images" :key="image" :src="env === 'production' ? '@/assets/without_ssl.jpg' : image" @error="changeImage">
+                <img v-for="image in product.images" :key="image" :src="env !== 'production' ? withoutSSL : image" @error="changeImage">
             </Gallery>
         </div>
         <div class="card__details">
@@ -29,6 +29,7 @@
 
 <script>
     import Gallery from '@/components/Gallery.vue';
+    import withoutSSL from '@/assets/without-ssl.jpg';
 
     export default {
         name: 'Card',
@@ -37,7 +38,8 @@
         },
         data() {
             return {
-                env: process.env.NODE_ENV
+                env: process.env.NODE_ENV,
+                withoutSSL
             }
         },
         props: ['product']
