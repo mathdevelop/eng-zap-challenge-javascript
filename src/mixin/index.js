@@ -1,4 +1,4 @@
-import image from '@/assets/without-ssl.jpg';
+import imageError from '@/assets/image-error.jpg';
 
 const mixin = {
     methods: {
@@ -9,7 +9,7 @@ const mixin = {
             }).format(price);
         },
         changeImage: function(event) {
-            event.target.src = image;
+            event.target.src = imageError;
         }
     }
 };

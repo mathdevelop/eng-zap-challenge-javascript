@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card__images">
             <Gallery>
-                <img v-for="image in product.images" :key="image" :src="image" @error="changeImage">
+                <img v-for="image in product.images" :key="image" :src="env === 'production' ? '@/assets/without_ssl.jpg' : image" @error="changeImage">
             </Gallery>
         </div>
         <div class="card__details">
@@ -34,6 +34,11 @@
         name: 'Card',
         components: {
             Gallery
+        },
+        data() {
+            return {
+                env: process.env.NODE_ENV
+            }
         },
         props: ['product']
     };

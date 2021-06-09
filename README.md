@@ -19,7 +19,7 @@ yarn serve
 yarn build
 ```
 
-#### *Continuous Deployment configurado no Netlify (Como tem SSL, utilizei um Proxy para consumir o JSON em produção e nas imagens eu coloquei uma padrão quando ocorrer o erro):
+#### *Continuous Deployment configurado no Netlify (Como tem SSL, utilizei um Proxy para consumir o JSON em produção e nas imagens eu coloquei uma padrão para carregar):
 ```bash
 https://zap-challenge.netlify.app/
 ```
